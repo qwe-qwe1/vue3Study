@@ -1,21 +1,18 @@
 <template>
   <div>
-    <input type="text" v-focus />
+    <h2 v-format-time="'YYYY/MM/DD'">{{ timestamp }}</h2>
   </div>
 </template>
 
 <script>
-import { ref, onMounted } from 'vue'
 export default {
-  directives: {
-    /* focus: {
-      mounted(el, binding, vnode, preVnode) {
-        console.log('focus mounted')
-        el.focus()
-      }
-    } */
-  },
-  setup() {}
+  setup() {
+    const timestamp = 1624452193
+
+    return {
+      timestamp
+    }
+  }
 }
 </script>
 
