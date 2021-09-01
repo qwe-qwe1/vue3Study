@@ -1,8 +1,9 @@
 import { createApp } from 'vue'
-import App from './12_teleport内置组件.vue/App.vue'
+import App from './13_learn_vue_router/App.vue'
 import registerDirectives from './directives'
 import pluginObject from './plugins/plugins_object'
 import pluginFunction from './plugins/plugins_function'
+import router from './13_learn_vue_router/router'
 
 const app = createApp(App)
 
@@ -16,5 +17,5 @@ app.use(pluginFunction)
     el.focus()
   }
 }) */
-
+app.use(router)
 app.mount('#app')
