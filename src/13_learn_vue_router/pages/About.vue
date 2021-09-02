@@ -1,7 +1,5 @@
 <template>
-  <div>
-    about
-  </div>
+  <div>about:{{ $route.query.name }} - {{ $route.query.age }}</div>
 </template>
 
 <script>
