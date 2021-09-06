@@ -11,7 +11,8 @@
     "dayjs": "^1.10.6",
     "mitt": "^3.0.0",
     "vue": "^3.0.0",
-    "vue-router": "^4.0.11"
+    "vue-router": "^4.0.11",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@vue/babel-plugin-jsx": "^1.0.6",
