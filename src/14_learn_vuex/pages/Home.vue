@@ -1,24 +1,31 @@
 <template>
   <div>
-    <h2>总价值：{{ $store.getters.totalPrice }}</h2>
-    <h2>总价值：{{ $store.getters.totalPriceCountGreaterN(3) }}</h2>
-    <h3>{{ sNameInfo }}</h3>
-    <!-- <h3>{{ ageInfo }}</h3>
-    <h3>{{ heightInfo }}</h3> -->
+    <h2>当前计数：{{ $store.state }}</h2>
+    <h2>{{ homeCounter }}</h2>
+    <button @click="increment">home+1</button>
+    <h2>{{ $store.getters.doubleHomeCounter }}</h2>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { createNamespacedHelpers } from 'vuex'
+const { mapState, mapGetters, mapMutations, mapActions } = createNamespacedHelpers('home')
 export default {
   computed: {
-    // ...mapGetters(['nameInfo', 'ageInfo', 'heightInfo'])
+    /* ...mapState({
+      homeCounter: state => state.home.homeCounter
+    }),
     ...mapGetters({
-      sNameInfo: 'nameInfo'
-    })
+      doubleHomeCounter: 'home/doubleHomeCounter'
+    }) */
+    /* ...mapState('home', ['homeCounter']),
+    ...mapGetters('home', ['doubleHomeCounter']) */
+    ...mapState(['homeCounter']),
+    ...mapGetters(['doubleHomeCounter'])
   },
-  setup() {
-    return {}
+  methods: {
+    ...mapMutations(['increment']),
+    ...mapActions(['incrementAction'])
   }
 }
 </script>
