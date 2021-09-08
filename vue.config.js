@@ -1,5 +1,8 @@
 module.exports = {
-  devServer: {
-    port: 11111
+  configureWebpack: {
+    devServer: {
+      port: 11111,
+      historyApiFallback: true
+    }
   }
 }
